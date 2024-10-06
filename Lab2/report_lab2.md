@@ -113,10 +113,9 @@ pyperplan --help
 pyperplan -h
 ```
 
-- Наконец, я провел тест, чтобы убедиться, что pyperplan работает, запустив домен и задачу. <br>
-<br>
-<img src="images/pyperplantest.png" alt="Pyperplan Test" style="width:800px;"/>
-<br>
+- Далее, чтобы убедиться, что pyperplan работает, запустив домен и задачу. <br\>
+Результат выполнения:<br\>
+![](pics/5.png)
 
 <!--- 
 
