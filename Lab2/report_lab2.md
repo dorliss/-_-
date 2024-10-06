@@ -18,18 +18,22 @@
 ![](pics/1.png)
 
 ### Установка ROS2 Humble:
-- Сначала я проверил инструкции на сайте ROS2 Humble. На странице «Начало работы» -> «Установка» я выбрал установку для Ubuntu 22.04 Jammy для виртуальной машины. https://releases.ubuntu.com/jammy/. и установил Ubuntu 22.04. <br>
-<br>
-<img src="images/ubuntuinstall.png" alt="Ubuntu 22.04 Jammy" style="width:800px;"/>
-<br>
-- Следуя инструкциям на сайте ROS2 Humble, я успешно установил ROS2 Humble и проверил свою дистрибуцию ROS. <br>
-<br>
-<img src="images/rosdistro.png" alt="ros2 distro" style="width:800px;"/>
-<br>
-- Также сделал тесты Talker и Listener. <br>
-<br>
-<img src="images/ros2talkerlistener.png" alt="talker & listener" style="width:800px;"/>
-<br>
+- Проверка локали и установка необходимых пакетов:
+```bash
+locale  # check for UTF-8
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+locale  # verify settings
+```
+
+Проверка текущие настройки локали системы до изменений:
+![](pics/2.jpeg)
+
+Проверка текущие настройки локали системы после изменений (по факту ничего не поменялось, все было так, как нужно):
+![](pics/3.jpeg)
+
 
 <!--- 
 
