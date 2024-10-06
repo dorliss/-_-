@@ -78,8 +78,7 @@ sudo apt install ros-dev-tools
 source /opt/ros/humble/setup.bash
 ```
 
-- Тестирование Talker и Listener:
-bash
+- Тестирование Talker и Listener: <br />
 В одном терминале и запуск Talker:
 ```bash
 source /opt/ros/humble/setup.bash
