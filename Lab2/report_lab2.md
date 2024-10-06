@@ -31,6 +31,8 @@
 <img src="images/ros2talkerlistener.png" alt="talker & listener" style="width:800px;"/>
 <br>
 
+<!--- 
+
 ### 2. Изучить планировщик Pyperplan [Pyperplan Github](https://github.com/aibasel/pyperplan):
 - Просматривая документацию по pyperplan, я клонировал его в свою виртуальную среду и установил зависимости. Либо просто выполните ```pip install pyperplan```. <br>
 <br>
@@ -101,3 +103,4 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 ```
+ --->
