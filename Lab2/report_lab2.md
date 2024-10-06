@@ -80,13 +80,13 @@ source /opt/ros/humble/setup.bash
 
 - Тестирование Talker и Listener:
 bash
-# В одном терминале и запуск Talker:
+В одном терминале и запуск Talker:
 ```bash
 source /opt/ros/humble/setup.bash
 ros2 run demo_nodes_cpp talker
 ```
 
-# В другом терминале запуск Listener:
+В другом терминале запуск Listener:
 ```bash
 source /opt/ros/humble/setup.bash
 ros2 run demo_nodes_py listener
