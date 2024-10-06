@@ -35,59 +35,50 @@ locale  # verify settings
 ![](pics/3.jpg)<br />
 Ремарка: сначала меняла настройки через администратора root, потому что от моего имя вылетала ошибка доступа, но потом добавила своего пользователя и назначила ему права администратора и все стало хорошо.
 
-Установка пакета для управления репозиториями:
+- Установка пакета для управления репозиториями:
 ```bash
 sudo apt install software-properties-common
 ```
 
-Устанавливает пакет, который позволяет управлять репозиториями APT (например, добавлять или удалять PPA) с помощью команды add-apt-repository 14.
-Добавление репозитория ROS2:
+- Добавление репозитория ROS2:
 ```bash
 sudo add-apt-repository universe
 ```
 
-Включает "universe" репозиторий, который содержит дополнительные пакеты, не поддерживаемые Canonical.
-Добавление ключа для пакетов ROS2:
+- Добавление ключа для пакетов ROS2:
 ```bash
 sudo apt update && sudo apt install curl -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 ```
 
-Устанавливает curl, если он не установлен.
-Загружает ключ GPG для проверки подлинности пакетов ROS2.
-Добавление источника пакетов ROS2:
+- Добавление источника пакетов ROS2:
 ```bash
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
-
-Добавляет новый источник пакетов для ROS2 в систему, используя текущую архитектуру и кодовое имя Ubuntu.
-Обновление списка пакетов и установка ROS2:
+ 
+- Обновление списка пакетов и установка ROS2:
 ```bash
 sudo apt update
 sudo apt upgrade
 ```
 
-Обновляет список доступных пакетов и устанавливает последние версии всех установленных пакетов.
-Установка полного рабочего стола ROS2:
+- Установка полного рабочего стола ROS2:
 ```bash
 sudo apt install ros-humble-desktop-full
 ```
-
-Устанавливает полный набор инструментов и библиотек ROS2 Humble, включая графические интерфейсы.
-Установка базовых компонентов ROS2:
+ 
+- Установка базовых компонентов ROS2:
 ```bash
 sudo apt install ros-humble-ros-base
 sudo apt install ros-dev-tools
 ```
 
-Устанавливает базовые компоненты ROS2 и инструменты разработки.
-Настройка окружения:
+- Настройка окружения:
 ```bash
 source /opt/ros/humble/setup.bash
 ```
 
-Загружает настройки окружения для использования ROS2 в текущем терминале.
-Тестирование Talker и Listener:
+- Тестирование Talker и Listener:
 bash
 # В одном терминале и запуск Talker:
 ```bash
