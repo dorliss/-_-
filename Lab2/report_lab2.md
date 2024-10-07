@@ -123,9 +123,40 @@ pyperplan -h
 ### Немного теории из интернета:<br /> 
 -*TurtleBot3* — это небольшой, доступный и программируемый мобильный робот, основанный на Robot Operating System (ROS), предназначенный для использования в образовании, исследованиях, хобби и прототипировании продуктов. Разработанный компанией ROBOTIS, TurtleBot3 предлагает модульную конструкцию и возможность настройки, что позволяет пользователям адаптировать его под различные задачи. Он оснащён датчиками LiDAR и 3D, что позволяет ему автономно перемещаться и выполнять задачи, такие как одновременная локализация и картографирование (SLAM). TurtleBot3 доступен в нескольких моделях, включая "Burger" и "Waffle", каждая из которых имеет свои особенности и возможности для расширения.
 
-- Я установил TurtleBot3 с его зависимостями и симуляциями из исходного кода, чтобы убедиться, что не будет никаких проблем. После завершения всех шагов в документации я запустил TurtleBot3 с моделью MODEL=waffle внутри Gazebo в пустом мире, чтобы убедиться, что после этого шага смогу просто запустить его с манипуляторной рукой. <br>
-![](pics/6.png)
-![](pics/7.png)
+- Я установил TurtleBot3 с его зависимостями и симуляциями из исходного кода, чтобы убедиться, что не будет никаких проблем. После завершения всех шагов в документации я запустил TurtleBot3 с моделью MODEL=waffle внутри Gazebo в пустом мире, чтобы убедиться, что после этого шага смогу просто запустить его с манипуляторной рукой. <br />
+![](pics/6.png) <br />
+![](pics/7.png) <br />
+
+- Команды для установки
+```bash
+sudo apt install ros-humble-gazebo-*
+sudo apt install ros-humble-cartographer
+sudo apt install ros-humble-cartographer-ros
+sudo apt install ros-humble-navigation2
+sudo apt install ros-humble-nav2-bringup
+
+mkdir -p ~/turtlebot3_ws/src
+cd ~/turtlebot3_ws/src/
+git clone -b humble-devel https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
+cd ~/turtlebot3_ws
+colcon build --symlink-install
+echo 'source ~/turtlebot3_ws/install/setup.bash' >> ~/.bashrc
+source ~/.bashrc
+
+echo 'export ROS_DOMAIN_ID=30 #TURTLEBOT3' >> ~/.bashrc
+source ~/.bashrc
+
+cd ~/turtlebot3_ws/src/
+git clone -b humble-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+cd ~/turtlebot3_ws && colcon build --symlink-install
+
+- launch turtlebot3
+source /usr/share/gazebo/setup.sh
+export TURTLEBOT3_MODEL=waffle
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
 - Затем я установил зависимости для манипуляторной руки на TB3 Waffle и запустил её в среде машинного обучения.
 <br>
 <img src="images/turtlebotwmanipulator.png" alt="waffle in ml env with manipulator hand" style="width:800px;"/>
