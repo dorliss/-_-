@@ -158,15 +158,16 @@ export TURTLEBOT3_MODEL=waffle
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 - Затем я установила зависимости для манипуляторной руки на TB3 Waffle и запустил её в среде машинного обучения.
+Скринжот получился не совсем информативный, поскольку виртуальной машине не хватает оперативки для работы в программе.
 ![](pics/8.png) <br />
 
-<!--- 
 
 ### 4- Создать ROS узел с планировщиком.
 - Прочитав несколько документаций в интернете, я создал базовый узел ROS2, который просто использует pyperplan без инструкций, чтобы показать, что pyperplan запускается, затем узел вращается и корректно завершает работу. <br>
-<br>
-<img src="images/pyperplannodeforros2.png" alt="Ros2 Node with Pyperplan" style="width:800px;"/>
-<br>
+
+Результат выполнения:![](pics/8.png) <br />
+![](pics/9.png) <br />
+![](pics/10.png) ![](pics/8.png) <br />
 
 ```python
 #!/usr/bin/env python3
@@ -179,7 +180,7 @@ from rclpy.executors import SingleThreadedExecutor
 class SimpleNode(Node):
     def __init__(self):
         super().__init__('pyperplan_node')
-        self.get_logger().info('pyperplan is ready on machine doruk@dorukvn...')
+        self.get_logger().info('pyperplan is ready on dorliss machine...')
 
         '''
         Here goes the domain and the test etc...
@@ -208,4 +209,4 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 ```
- --->
+
