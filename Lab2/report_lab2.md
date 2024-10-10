@@ -166,49 +166,8 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 - Прочитав несколько документаций в интернете, я создал базовый узел ROS2, который просто использует pyperplan без инструкций, чтобы показать, что pyperplan запускается, затем узел вращается и корректно завершает работу. <br>
 
 Результат выполнения: <br />
+![](pics/9a.png) <br />
+![](pics/9b.png) <br />
 ![](pics/9.png) <br />
 ![](pics/10.png) <br />
-
-
-Текст файла pyperplan_node.py: <br />
-```python
-#!/usr/bin/env python3
-
-import rclpy
-from rclpy.node import Node
-import pyperplan
-from rclpy.executors import SingleThreadedExecutor
-
-class SimpleNode(Node):
-    def __init__(self):
-        super().__init__('pyperplan_node')
-        self.get_logger().info('pyperplan is ready on dorliss machine...')
-
-        '''
-        Here goes the domain and the test etc...
-        '''
-
-        self.create_timer(2.0, self.cleanShutdown)
-    
-    def cleanShutdown(self):
-        self.get_logger().info('shutting down')
-        rclpy.shutdown()
-
-def main(args=None):
-    rclpy.init(args=args)
-    node = SimpleNode()
-    executor = SingleThreadedExecutor()
-    executor.add_node(node)
-    try:
-        executor.spin()
-    except KeyboardInterrupt:
-        node.get_logger().info('shutting down: Ki')
-    finally:
-        node.get_logger().info('cleaning up...')
-        executor.shutdown()
-        node.destroy_node()
-
-if __name__ == '__main__':
-    main()
-```
 
