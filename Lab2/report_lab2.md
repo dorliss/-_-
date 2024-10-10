@@ -158,9 +158,7 @@ export TURTLEBOT3_MODEL=waffle
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 - Затем я установила зависимости для манипуляторной руки на TB3 Waffle и запустил её в среде машинного обучения.
-<br>
-<img src="images/turtlebotwmanipulator.png" alt="waffle in ml env with manipulator hand" style="width:800px;"/>
-<br>
+![](pics/8.png) <br />
 
 <!--- 
 
