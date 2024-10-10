@@ -165,10 +165,12 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ### 4- Создать ROS узел с планировщиком.
 - Прочитав несколько документаций в интернете, я создал базовый узел ROS2, который просто использует pyperplan без инструкций, чтобы показать, что pyperplan запускается, затем узел вращается и корректно завершает работу. <br>
 
-Результат выполнения:![](pics/8.png) <br />
+Результат выполнения: <br />
 ![](pics/9.png) <br />
-![](pics/10.png) ![](pics/8.png) <br />
+![](pics/10.png) <br />
 
+
+Текст файла pyperplan_node.py: <br />
 ```python
 #!/usr/bin/env python3
 
